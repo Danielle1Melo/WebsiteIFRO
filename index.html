@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <title>Instituto Federal de Rondônia - Campus Vilhena</title>
   </head>
   <body>
@@ -11,9 +13,11 @@
         <div class="container">
             <div class="top-bar-left">
                 <a href="tel:+556921829600" class="contact-link">
+                    <svg data-lucide="phone" width="18px" height="18px"></svg>
                     <span>(69) 2182-9600</span>
                 </a>
                 <a href="mailto:contato@ifro.edu.br" class="contact-link">
+                    <svg data-lucide="mail" width="18px" height="18px"></svg>
                     <span>contato@ifro.edu.br</span>
                 </a>
             </div>
@@ -25,7 +29,67 @@
         </div>
     </div>
 
+    <header class="header">
+      <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                      <img src="/src/assets/images/logoIfro.png" alt="logo ifro" width="50px">
+                    </div>
+                    <div class="logo-text">
+                        <h1>Instituto Federal de Rondônia</h1>
+                        <p>Campus Vilhena</p>
+                    </div>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar no portal..." id="searchInput">
+                    <button type="button" class="search-btn">
+                      <svg data-lucide="search"></svg>
+                    </button>
+                </div>
+
+
+                <nav class="nav">
+                    <a href="#" class="nav-link">Início</a>
+                    <div class="dropdown">
+                        <button class="nav-link dropdown-btn">
+                            Sobre o IFRO
+                            <svg data-lucide="chevron-down"></svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">História</a>
+                            <a href="#" class="dropdown-item">Missão e Visão</a>
+                            <a href="#" class="dropdown-item">Estrutura</a>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-link">Cursos</a>
+                    <a href="#" class="nav-link">Notícias</a>
+                    <a href="#" class="nav-link">Contato</a>
+                </nav>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#" class="mobile-nav-link">Início</a>
+                <a href="#" class="mobile-nav-link">Sobre o IFRO</a>
+                <a href="#" class="mobile-nav-link">Cursos</a>
+                <a href="#" class="mobile-nav-link">Notícias</a>
+                <a href="#" class="mobile-nav-link">Contato</a>
+            </div>
+        </div>
+    </header>
 
     <script type="module" src="/src/main.ts"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons();
+    });
+  </script>
   </body>
 </html>
