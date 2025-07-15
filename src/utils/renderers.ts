@@ -1,11 +1,15 @@
-import { newsData } from "./data";
+import { eventsData, newsData, quickLinksData } from "./data";
 import { formatDate } from "./formatDate";
+import { getIconSVG } from "./getIcons";
+import { getStatusText } from "./getStatusText";
 
 export function renderNews(): void {
-    const newsGrid = document.getElementById('newsGrid');
-    if (!newsGrid) return;
+  const newsGrid = document.getElementById("newsGrid");
+  if (!newsGrid) return;
 
-    newsGrid.innerHTML = newsData.map(news => `
+  newsGrid.innerHTML = newsData
+    .map(
+      (news) => `
         <article class="news-card">
             <div class="news-image">
                 <img src="${news.image}" alt="${news.title}">
@@ -30,5 +34,68 @@ export function renderNews(): void {
                 </button>
             </div>
         </article>
-    `).join('');
+    `
+    )
+    .join("");
+}
+
+export function renderEvents(): void {
+  const eventsList = document.getElementById("eventsList");
+  if (!eventsList) return;
+
+  eventsList.innerHTML = eventsData
+    .map(
+      (event) => `
+        <div class="event-card">
+            <div class="event-status ${event.status}">${getStatusText(
+        event.status
+      )}</div>
+            <h3 class="event-title">${event.title}</h3>
+            <p class="event-description">${event.description}</p>
+            <div class="event-details">
+                <div class="event-detail">
+                    <svg data-lucide="calendar" width="16" height="16"></svg>
+                    <span>${formatDate(event.date)}</span>
+                </div>
+                <div class="event-detail">
+                    <svg data-lucide="clock" width="16" height="16"></svg>
+                    <span>${event.time}</span>
+                </div>
+                <div class="event-detail">
+                    <svg data-lucide="map-pin" width="16" height="16"></svg>
+                    <span>${event.location}</span>
+                </div>
+                <div class="event-detail">
+                    <svg data-lucide="users" width="16" height="16"></svg>
+                    <span>${event.participants}</span>
+                </div>
+            </div>
+            <button class="event-button">Inscrever-se</button>
+        </div>
+    `
+    )
+    .join("");
+}
+
+export function renderQuickLinks(): void {
+  const quickLinksGrid = document.getElementById("quickLinksGrid");
+  if (!quickLinksGrid) return;
+
+  quickLinksGrid.innerHTML = quickLinksData
+    .map(
+      (link) => `
+        <a href="${link.href}" class="quick-link-card">
+            <div class="quick-link-content">
+                <div class="quick-link-icon ${link.color}">
+                    ${getIconSVG(link.icon)}
+                </div>
+                <div class="quick-link-text">
+                    <h3>${link.title}</h3>
+                    <p>${link.description}</p>
+                </div>
+            </div>
+        </a>
+    `
+    )
+    .join("");
 }

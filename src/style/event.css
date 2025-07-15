@@ -1,0 +1,220 @@
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-left: 4px solid #16a34a;
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.event-header {
+    display: flex;
+    justify-content: between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.event-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.event-status.open {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.event-status.limited {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.event-status.confirmed {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.event-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.event-description {
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.event-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.event-detail svg {
+    color: #16a34a;
+}
+
+.event-button {
+    background: #16a34a;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.event-button:hover {
+    background: #15803d;
+}
+
+/* Quick Links */
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.quick-link-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.quick-link-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+.quick-link-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.quick-link-icon {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.quick-link-card:hover .quick-link-icon {
+    transform: scale(1.1);
+}
+
+.quick-link-icon.blue { background: #3b82f6; }
+.quick-link-icon.green { background: #16a34a; }
+.quick-link-icon.purple { background: #8b5cf6; }
+.quick-link-icon.orange { background: #f59e0b; }
+.quick-link-icon.red { background: #ef4444; }
+.quick-link-icon.teal { background: #14b8a6; }
+
+.quick-link-icon svg {
+    color: white;
+}
+
+.quick-link-text h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.quick-link-card:hover .quick-link-text h3 {
+    color: #16a34a;
+}
+
+.quick-link-text p {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.help-card {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    color: white;
+}
+
+.help-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.help-content p {
+    color: #bbf7d0;
+    margin-bottom: 1rem;
+}
+
+.help-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.help-buttons .btn-primary {
+    background: white;
+    color: #16a34a;
+}
+
+.help-buttons .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .event-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .quick-links-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .help-buttons {
+        flex-direction: column;
+    }
+}

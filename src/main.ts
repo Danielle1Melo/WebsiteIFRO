@@ -1,4 +1,4 @@
-import { renderNews } from "./utils/renderers";
+import { renderEvents, renderNews, renderQuickLinks } from "./utils/renderers";
 
 function setupMobileMenu(): void {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -21,6 +21,8 @@ if (document.readyState === 'loading') {
 function init(): void {
 
     renderNews();
+    renderEvents();
+    renderQuickLinks();
 
     document.body.style.opacity = '0';
     window.addEventListener('load', () => {
