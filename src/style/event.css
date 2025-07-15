@@ -1,3 +1,13 @@
+.content-section {
+    padding: 4rem 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
 .events-list {
     display: flex;
     flex-direction: column;
@@ -96,7 +106,6 @@
     background: #15803d;
 }
 
-/* Quick Links */
 .quick-links-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -202,8 +211,14 @@
 
 
 @media (max-width: 768px) {
-    .container {
+    .content-section  {
         padding: 0 1rem;
+    }
+
+    .content-grid{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
     }
     
     .event-details {
