@@ -7,3 +7,29 @@ WebsiteIFRO is a project developed as part of the Front-End Development discipli
 * CSS
 * TypeScript
 * Vite
+
+## Installation
+
+1. Clone the repository:
+   
+```
+git clone https://github.com/Danielle1Melo/WebsiteIFRO.git
+```
+
+2. Navigate to the directory:
+   
+```
+cd WebsiteIFRO
+```
+
+3. Install dependencies:
+   
+```
+npm install
+```
+
+4. Start the development server:
+   
+```
+npm run dev
+```
